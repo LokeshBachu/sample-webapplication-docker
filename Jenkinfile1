@@ -44,7 +44,7 @@ pipeline{
                 {
               steps{
                   script{
-		  sh 'cp -r ../devops-training@2/target .'
+		  sh 'cp -r ../Jenkin-Maven-Sonar-Docker@2/target .'
                   sh 'docker build . -t lokesh4docker/devops-training:$Docker_tag'
 		  withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {			    
 				  sh 'docker login -u lokesh4docker -p $docker_password'
