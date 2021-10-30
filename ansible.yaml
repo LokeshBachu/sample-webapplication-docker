@@ -6,6 +6,10 @@
       dest: /root/
   - name: delete the previous of kubernetes objects 
     command: sudo kubectl delete -f /root/deployment.yaml
+    become: yes
+    become_method: sudo
   - name: Create a Deployment by reading the definition from a local file
     command: sudo kubectl apply -f /root/deployment.yaml
+    become: yes
+    become_method: sudo
       
